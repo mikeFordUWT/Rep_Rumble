@@ -45,7 +45,7 @@ Animation.prototype.currentFrame = function () {
 
 Animation.prototype.isDone = function () {
     return (this.elapsedTime >= this.totalTime);
-}
+};
 
 // no inheritance
 function Background(game, spritesheet) {
@@ -54,7 +54,7 @@ function Background(game, spritesheet) {
     this.spritesheet = spritesheet;
     this.game = game;
     this.ctx = game.ctx;
-};
+}
 
 Background.prototype.draw = function () {
     this.ctx.drawImage(this.spritesheet,
@@ -94,11 +94,11 @@ function TedCruz(game){
 TedCruz.prototype.draw = function(){
     this.animation.drawFrame(this.game.clockTick, this.ctx, this.x, this.y);
     Entity.prototype.draw.call(this);
-}
+};
 
 TedCruz.prototype.update = function () {
     if(this.game.space);
-}
+};
 
 //download background image
 AM.queueDownload("./img/whiteHouse.jpg");
