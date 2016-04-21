@@ -112,6 +112,8 @@ AM.downloadAll(function () {
     var ted = new TedCruz(gameEngine);
 
 
+
+
     //add entites to game
     gameEngine.addEntity(new Background(gameEngine, AM.getAsset("./img/whiteHouse.jpg")));
 
