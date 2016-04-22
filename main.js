@@ -79,7 +79,7 @@ function TedCruz(game){
     this.ducking = false;
     this.walkLeft = false;
     this.walkRight = false;
-    this.standing = true;
+    // this.standing = true;
     this.lowKicking = false;
     this.highKicking = false;
 
@@ -91,14 +91,69 @@ function TedCruz(game){
 
 }
 
+TedCruz.prototype = new Entity();
+TedCruz.prototype.constructor = TedCruz;
+
+TedCruz.prototype.update = function () {
+    //checks which key has been pressed
+    if(this.game.d){
+        this.walkRight = true;
+    }else if(this.game.a){
+        this.walkLeft = true;
+    }else if(this.game.s){
+        this.ducking = true;
+    }else if(this.game.w){
+        this.jumping = true;
+    }else if(this.game.i){
+        this.punching = true;
+    }else if(this.game.o){
+        this.lowKicking = true;
+    }else if(this.game.p){
+        this.highKicking = true;
+    }
+
+    if(this.walkRight){
+
+    }else if(this.walkLeft){
+
+    }else if(this.ducking){
+
+    }else if(this.jumping){
+
+    }else if(this.punching){
+
+    }else if(this.highKicking){
+
+    }else if(this.lowKicking){
+
+    }
+
+    Entity.prototype.update.call(this);
+};
+
 TedCruz.prototype.draw = function(){
-    this.animation.drawFrame(this.game.clockTick, this.ctx, this.x, this.y);
+
+    if(this.punching){
+
+    }else if(this.jumping){
+
+    }else if(this.ducking){
+
+    }else if(this.walkLeft){
+
+    }else if(this.walkRight) {
+
+    }else if(this.lowKicking){
+
+    }else if(this.highKicking){
+
+    }else{ //standing still
+        this.animation.drawFrame(this.game.clockTick, ctx, this.x, this.y);
+    }
     Entity.prototype.draw.call(this);
 };
 
-TedCruz.prototype.update = function () {
-    if(this.game.space);
-};
+
 
 //download background image
 AM.queueDownload("./img/whiteHouse.jpg");
@@ -116,7 +171,7 @@ AM.downloadAll(function () {
 
     //add entites to game
     gameEngine.addEntity(new Background(gameEngine, AM.getAsset("./img/whiteHouse.jpg")));
-
+    gameEngine.addEntity(ted);
 
     gameEngine.init(ctx);
     gameEngine.start();
