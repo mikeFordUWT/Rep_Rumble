@@ -62,16 +62,35 @@ GameEngine.prototype.startInput = function () {
     var that = this;
 
     this.ctx.canvas.addEventListener("keydown", function (e) {
-        if (String.fromCharCode(e.which) === ' ') that.space = true;
-        else if(String.fromCharCode(e.which) === 'a') that.a = true;
-        else if(String.fromCharCode(e.which) === 's') that.s = true;
-        else if(String.fromCharCode(e.which) === 'd') that.d = true;
-        else if(String.fromCharCode(e.which) === 'w') that.w = true;
-        else if(String.fromCharCode(e.which) === 'i') that.i = true;
-        else if(String.fromCharCode(e.which) === 'o') that.o = true;
-        else if(String.fromCharCode(e.which) === 'p') that.p = true;
-        else if(String.fromCharCode(e.which) === 'm') that.m = true;
-        //        console.log(e);
+
+        if (String.fromCharCode(e.which) === ' '){
+            that.space = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 'a'){
+            that.a = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 's') {
+            that.s = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 'd') {
+            that.d = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 'w') {
+            that.w = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 'i') {
+            that.i = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 'o') {
+            that.o = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 'p') {
+            that.p = true;
+        }
+        if(String.fromCharCode(e.which).toLowerCase() === 'm') {
+            that.m = true;
+        }
+
         e.preventDefault();
     }, false);
 
