@@ -93,6 +93,7 @@ Background.prototype.draw = function (ctx) {
         this.x, this.y);
 };
 
+
 Background.prototype.update = function () {
 };
 
